@@ -1,0 +1,228 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Navbar */
+  header {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar h1 {
+    font-size: 1.5em;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar ul li {
+    margin: 0;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar ul li a:hover {
+    color: #343a40;
+    background-color:#f1c40f;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #495057; 
+    padding: 8px 15px;
+    border-radius: 8px;
+    gap: 10px; 
+  }
+  
+  .search-container input {
+    border: none;
+    background: none;
+    color: #fff; 
+    outline: none;
+    font-size: 1rem;
+    width: 250px; 
+  }
+  
+  .search-container input::placeholder {
+    color: #adb5bd; 
+  }
+  
+  .search-container .search-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .search-container .search-icon:hover {
+    color: #f1c40f; 
+  }
+  
+  /* Main Section */
+  main {
+    flex: 1;
+    padding: 20px;
+    background-color:#dadbde;
+  }
+  
+  #admin-actions {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #admin-actions h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Add Book Form */
+  #add-book-form {
+    margin-bottom: 30px;
+    display: block;
+  }
+  
+  #add-book-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  #add-book-form label {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  #add-book-form input,
+  #add-book-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #add-book-form button {
+    align-self: center;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #add-book-form button:hover {
+    background-color: #0056b3;
+  }
+  /* Styling for the book list container */
+#books-container {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px; 
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Styling for individual book cards */
+#books-container .book {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 250px; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add gap between elements within a book card */
+#books-container .book h3,
+#books-container .book p {
+  margin-bottom: 10px;
+}
+
+/* Styling for book titles */
+#books-container .book h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Styling for book details (author, description, price) */
+#books-container .book p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Styling for price to highlight it */
+#books-container .book p strong {
+  color: #f39c12;
+}
+
+/* Styling for the delete button */
+#books-container .book button {
+  align-self: flex-start; 
+  margin-top: auto; 
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Button hover effect */
+#books-container .book button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  #books-container {
+    grid-template-columns: 1fr;
+  }
+}
